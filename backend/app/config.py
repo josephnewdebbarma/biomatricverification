@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     ORIGINS: str = "http://localhost:5173,http://localhost:3000"
     FRONTEND_URL: str = "http://localhost:5173"
     ORIGIN: Optional[str] = None
+    BACKEND_URL: Optional[str] = None
 
     RP_ID: str = "localhost"
     RP_NAME: str = "Biometric Attendance System"
