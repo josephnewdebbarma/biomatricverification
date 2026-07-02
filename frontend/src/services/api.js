@@ -1,7 +1,12 @@
 import axios from 'axios'
 
 const getApiBaseUrl = () => {
-  return import.meta.env.VITE_API_URL || ''
+  const baseUrl = import.meta.env.VITE_API_URL
+  if (!baseUrl) {
+    console.warn('VITE_API_URL is not defined. API requests will use the relative /api path.')
+    return '/api'
+  }
+  return `${baseUrl.replace(/\/$/, '')}/api`
 }
 
 const API_BASE_URL = getApiBaseUrl()

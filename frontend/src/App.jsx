@@ -22,8 +22,12 @@ export default function App() {
         <Route path="/student/attendance-history" element={<StudentAttendanceHistory />} />
         <Route path="/student/mark-attendance" element={<MarkAttendance />} />
         <Route path="/student/biometric-register" element={<BiometricRegister />} />
+        <Route path="/student" element={<Navigate to="/student/dashboard" replace />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
+        <Route path="/dashboard" element={<Navigate to="/student/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   )
